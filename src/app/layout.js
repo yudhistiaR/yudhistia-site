@@ -1,4 +1,10 @@
 import "./globals.css";
+
+//** components
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { TailwindIndicator } from "@/components/TailwindIndicator";
+
 import { Fira_Code } from "next/font/google";
 
 const FiraCode = Fira_Code({ subsets: ["latin"] });
@@ -29,8 +35,12 @@ export const metadata = {
       "max-snippet": -1,
     },
   },
-  instagram: {
-    title: "devaslife_20",
+  icons: {
+    icon: "/icon.png",
+    apple: "/apple-touch-icon.png",
+  },
+  twitter: {
+    title: "M.Yudhistia Rahman",
     card: "summary_large_image",
   },
 };
@@ -38,7 +48,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={FiraCode.className}>{children}</body>
+      <body className={FiraCode.className}>
+        <main>
+          <Navbar />
+          {children}
+          <Footer />
+        </main>
+        <TailwindIndicator />
+      </body>
     </html>
   );
 }
