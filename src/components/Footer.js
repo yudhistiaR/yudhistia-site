@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="flex items-center border-r border-lines divide-x divide-lines">
         <a
           target="_blank"
-          href="/"
+          href="https://github.com/isKazumi/yudhistia-site"
           className="flex items-center gap-x-2 px-2 py-1 hover:text-white transition-colors"
         >
           <BiGitBranch className="text-lg" />
