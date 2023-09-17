@@ -5,7 +5,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { TailwindIndicator } from "@/components/TailwindIndicator";
 
-import { Fira_Code } from "next/font/google";
+import Script from "next/script";
+import { Fira_Code, Scada } from "next/font/google";
 
 const FiraCode = Fira_Code({ subsets: ["latin"] });
 
@@ -56,6 +57,13 @@ export default function RootLayout({ children }) {
         </main>
         <TailwindIndicator />
       </body>
+      {process.env.NODE_ENV === "production" && (
+        <Script
+          async
+          src="https://analytics.umami.is/script.js"
+          data-website-id="ca764581-cdf3-40c4-a71f-0301df992fab"
+        />
+      )}
     </html>
   );
 }
